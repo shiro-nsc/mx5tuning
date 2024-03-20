@@ -1,4 +1,4 @@
-Originally, this is an additional research homework into Python libraries or frameworks for IT certificate @ local community college.
+Originally, this was an additional research homework into Python libraries or frameworks for IT certificate @ local community college.
 
 *********************************************************
 Research Python Libraries or Framework
