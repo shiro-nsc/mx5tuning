@@ -62,19 +62,24 @@ print(air_fuel_array)
 # air volume range from 0 to 15
 air_volume = np.arange(16)
 
-# RPM for x array
-x = np.array([1024, 1536, 2048, 2560, 3072, 3584, 4096, 4608, 5120, 5632, 6144, 6656, 7168])
+# RPM for x axis
+# x = np.array([1024, 1536, 2048, 2560, 3072, 3584, 4096, 4608, 5120, 5632, 6144, 6656, 7168])
+rpm_range = np.array([1024, 1536, 2048, 2560, 3072, 3584, 4096, 4608, 5120, 5632, 6144, 6656, 7168])
 # air volume for y axis
-y = air_volume
+# y = air_volume
 
-# it looks good if the value of x is reversed but commentted our for now
+# if x axis is reversed
 # y = (air_volume)[::-1]
 
 # Create a meshgrid for the x (RPM) and y (air volume) values
-X, Y = np.meshgrid(x, y)
+# X, Y = np.meshgrid(x, y)
+X, Y = np.meshgrid(rpm_range, air_volume)
 
 # air-fuel ratio for Z
 Z = air_fuel_array
+
+# air-fuel ratio for Z
+# Z = (air_fuel_array)[::-1]
 
 # Create a 3D plot
 fig = plt.figure()
@@ -88,6 +93,10 @@ ax.set_xlabel('RPM')
 ax.set_ylabel('Air volume')
 ax.set_zlabel('Air-fuel ratio')
 ax.set_title('3D Surface Plot of Air-fuel Ratio')
+
+# Reverse the direction of the Z-axis
+ax.set_zlim(ax.get_zlim()[::-1])
+ax.set_xlim(ax.get_xlim()[::-1])
 
 # Show color bar
 fig.colorbar(surf, shrink=0.5, aspect=5)
